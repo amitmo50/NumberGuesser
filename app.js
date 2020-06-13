@@ -14,7 +14,7 @@ const guessNumber = document.querySelector('#guess-input');
 let min = 1,
     max = 10,
     numberOfTry = 3;
-    winningNumber = 4;//Math.floor(Math.random() * max + 1);
+    winningNumber = numberToGuess(min, max);
 
 maxNumber.textContent = 10;
 minNumber.textContent = 1;
@@ -52,7 +52,9 @@ function playGame(){
     } 
   }
 }
-
+function numberToGuess(min, max){
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
 // set user information message
 function setMessage(messageValue, color){
   message.style.color = color;
